@@ -49,9 +49,8 @@ mark[class^="tj-"] { border-bottom: 1.5px solid currentColor; }
 
 /* pattern */
 .khatam { position: absolute; inset: 0; background: var(--gold); opacity: .14; pointer-events: none;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23000' stroke-width='1.3'%3E%3Cpath d='M32 10l6.4 15.6L54 32l-15.6 6.4L32 54l-6.4-15.6L10 32l15.6-6.4z'/%3E%3Crect x='17' y='17' width='30' height='30'/%3E%3Cpath d='M0 0l10 10M64 0L54 10M0 64l10-10M64 64L54 54'/%3E%3C/g%3E%3C/svg%3E") repeat;
-          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23000' stroke-width='1.3'%3E%3Cpath d='M32 10l6.4 15.6L54 32l-15.6 6.4L32 54l-6.4-15.6L10 32l15.6-6.4z'/%3E%3Crect x='17' y='17' width='30' height='30'/%3E%3Cpath d='M0 0l10 10M64 0L54 10M0 64l10-10M64 64L54 54'/%3E%3C/g%3E%3C/svg%3E") repeat; }
-.star { clip-path: polygon(50% 0, 64.6% 14.6%, 85.4% 14.6%, 85.4% 35.4%, 100% 50%, 85.4% 64.6%, 85.4% 85.4%, 64.6% 85.4%, 50% 100%, 35.4% 85.4%, 14.6% 85.4%, 14.6% 64.6%, 0 50%, 14.6% 35.4%, 14.6% 14.6%, 35.4% 14.6%); }
+  -webkit-mask: var(--pattern) repeat; mask: var(--pattern) repeat; }
+.star { clip-path: var(--badge-clip, polygon(50% 0, 64.6% 14.6%, 85.4% 14.6%, 85.4% 35.4%, 100% 50%, 85.4% 64.6%, 85.4% 85.4%, 64.6% 85.4%, 50% 100%, 35.4% 85.4%, 14.6% 85.4%, 14.6% 64.6%, 0 50%, 14.6% 35.4%, 14.6% 14.6%, 35.4% 14.6%)); }
 
 /* cover */
 .cover { page: cover; padding: 0 !important; min-height: 297mm; height: 297mm; overflow: hidden; background: var(--cover); color: #fff; display: flex; flex-direction: column; justify-content: space-between; }
@@ -190,7 +189,7 @@ td .sub, th .sub { font-size: .85em; }
 .steps { list-style: none; margin: 0; padding: 0; counter-reset: s; display: grid; gap: 2mm; }
 .steps li { counter-increment: s; display: grid; grid-template-columns: 9mm 1fr; gap: 3mm; border: 1px solid var(--line); border-radius: 3mm; padding: 2mm 3mm; break-inside: avoid; }
 .steps li::before { content: counter(s); width: 9mm; height: 9mm; display: grid; place-items: center; background: var(--uc, var(--primary)); color: #fff; font: 700 10pt var(--f-display);
-  clip-path: polygon(50% 0, 64.6% 14.6%, 85.4% 14.6%, 85.4% 35.4%, 100% 50%, 85.4% 64.6%, 85.4% 85.4%, 64.6% 85.4%, 50% 100%, 35.4% 85.4%, 14.6% 85.4%, 14.6% 64.6%, 0 50%, 14.6% 35.4%, 14.6% 14.6%, 35.4% 14.6%); }
+  clip-path: var(--badge-clip, polygon(50% 0, 64.6% 14.6%, 85.4% 14.6%, 85.4% 35.4%, 100% 50%, 85.4% 64.6%, 85.4% 85.4%, 64.6% 85.4%, 50% 100%, 35.4% 85.4%, 14.6% 85.4%, 14.6% 64.6%, 0 50%, 14.6% 35.4%, 14.6% 14.6%, 35.4% 14.6%)); }
 .steps .tg { font-size: calc(17pt * var(--tg-k)); line-height: var(--tg-lh); display: block; }
 .steps .tr { color: var(--primary); font-size: 9pt; }
 .steps .tr .sub { display: inline; margin-left: 2mm; }
@@ -337,5 +336,24 @@ td .sub, th .sub { font-size: .85em; }
 .ws.ws-cjk td { font: calc(16pt * var(--tg-k))/1 var(--f-tg); }
 .ws-key .ws.ws-cjk td { font-size: 7.5pt; }
 
+/* ---------- culture artwork ---------- */
+.art, .art-icon, .art-corner { display: block; width: 100%; height: auto; overflow: visible; }
+.art .ac, .art-corner .ac, .art-icon .ac { color: var(--art-accent, var(--gold)); }
+.art .ac2 { color: #ffffff; }
+.cover-art { color: #f2c76b; opacity: .9; margin: 4mm -6mm 0; }
+.cover-art .ac { color: #ffffff; }
+.opener-art { color: var(--uc); opacity: .35; margin-top: auto; }
+.lesson-h .head-corner { position: absolute; right: 4mm; top: 4mm; width: 9mm; color: var(--uc); opacity: .5; }
+.cert .cert-corner { position: absolute; width: 18mm; color: var(--gold); }
+.cert .cert-corner.tl { left: 8mm; top: 8mm; } .cert .cert-corner.tr { right: 8mm; top: 8mm; }
+.cert .cert-corner.bl { left: 8mm; bottom: 8mm; } .cert .cert-corner.br { right: 8mm; bottom: 8mm; }
+.cert .cert-art { width: 120mm; color: var(--primary); opacity: .25; }
+[data-motif="fr"] .badge, [data-motif="zh"] .badge { box-shadow: inset 0 0 0 1.2mm var(--uc), inset 0 0 0 1.6mm rgba(255, 255, 255, .85); }
+[data-motif="bn"] .cover-art .ac { color: #f42a41; }
+[data-motif="fr"] .cover-art .ac { color: #ef4135; } [data-motif="fr"] .cover-art .ac2 { color: #8fb0ff; }
+
 /* course theme: Learn Bangla */
-:root { --primary: #0b7a4b; --ink: #0f2a1d; --ink-2: #4a6355; --ink-3: #7a8f83; --line: #d2e1d7; --tint: #e5efe8; --cover: #0b3d2a; --f-tg: "Hind Siliguri", "Noto Sans Bengali", "Nirmala UI", sans-serif; --f-en: "Figtree", "Hind Siliguri", "Noto Sans Bengali", "Nirmala UI", sans-serif, "Segoe UI", system-ui, sans-serif; --tg-k: .96; --tg-lh: 1.6; }
+:root { --primary: #0b7a4b; --ink: #0f2a1d; --ink-2: #4a6355; --ink-3: #7a8f83; --line: #d2e1d7; --tint: #e5efe8; --cover: #0b3d2a; --f-tg: "Hind Siliguri", "Noto Sans Bengali", "Nirmala UI", sans-serif; --f-en: "Figtree", "Hind Siliguri", "Noto Sans Bengali", "Nirmala UI", sans-serif, "Segoe UI", system-ui, sans-serif; --tg-k: .96; --tg-lh: 1.6;
+  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23000' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M32 4 L60 32 L32 60 L4 32 Z' stroke-dasharray='3 4'/%3E%3Cellipse cx='32' cy='22' rx='3.6' ry='8' transform='rotate(0 32 32)'/%3E%3Cellipse cx='32' cy='22' rx='3.6' ry='8' transform='rotate(45 32 32)'/%3E%3Cellipse cx='32' cy='22' rx='3.6' ry='8' transform='rotate(90 32 32)'/%3E%3Cellipse cx='32' cy='22' rx='3.6' ry='8' transform='rotate(135 32 32)'/%3E%3Cellipse cx='32' cy='22' rx='3.6' ry='8' transform='rotate(180 32 32)'/%3E%3Cellipse cx='32' cy='22' rx='3.6' ry='8' transform='rotate(225 32 32)'/%3E%3Cellipse cx='32' cy='22' rx='3.6' ry='8' transform='rotate(270 32 32)'/%3E%3Cellipse cx='32' cy='22' rx='3.6' ry='8' transform='rotate(315 32 32)'/%3E%3Ccircle cx='32' cy='32' r='3'/%3E%3Ccircle cx='0' cy='0' r='1.6'/%3E%3Ccircle cx='64' cy='0' r='1.6'/%3E%3Ccircle cx='0' cy='64' r='1.6'/%3E%3Ccircle cx='64' cy='64' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+  --badge-clip: polygon(50% 0%, 53.3% 0.3%, 56.4% 1.4%, 59.3% 3.1%, 61.9% 5.4%, 64.1% 8.4%, 65.3% 13%, 69.4% 10.6%, 73.1% 10%, 76.6% 10.2%, 79.9% 11.1%, 82.8% 12.6%, 85.4% 14.6%, 87.4% 17.2%, 88.9% 20.1%, 89.8% 23.4%, 90% 26.9%, 89.4% 30.6%, 87% 34.7%, 91.6% 35.9%, 94.6% 38.1%, 96.9% 40.7%, 98.6% 43.6%, 99.7% 46.7%, 100% 50%, 99.7% 53.3%, 98.6% 56.4%, 96.9% 59.3%, 94.6% 61.9%, 91.6% 64.1%, 87% 65.3%, 89.4% 69.4%, 90% 73.1%, 89.8% 76.6%, 88.9% 79.9%, 87.4% 82.8%, 85.4% 85.4%, 82.8% 87.4%, 79.9% 88.9%, 76.6% 89.8%, 73.1% 90%, 69.4% 89.4%, 65.3% 87%, 64.1% 91.6%, 61.9% 94.6%, 59.3% 96.9%, 56.4% 98.6%, 53.3% 99.7%, 50% 100%, 46.7% 99.7%, 43.6% 98.6%, 40.7% 96.9%, 38.1% 94.6%, 35.9% 91.6%, 34.7% 87%, 30.6% 89.4%, 26.9% 90%, 23.4% 89.8%, 20.1% 88.9%, 17.2% 87.4%, 14.6% 85.4%, 12.6% 82.8%, 11.1% 79.9%, 10.2% 76.6%, 10% 73.1%, 10.6% 69.4%, 13% 65.3%, 8.4% 64.1%, 5.4% 61.9%, 3.1% 59.3%, 1.4% 56.4%, 0.3% 53.3%, 0% 50%, 0.3% 46.7%, 1.4% 43.6%, 3.1% 40.7%, 5.4% 38.1%, 8.4% 35.9%, 13% 34.7%, 10.6% 30.6%, 10% 26.9%, 10.2% 23.4%, 11.1% 20.1%, 12.6% 17.2%, 14.6% 14.6%, 17.2% 12.6%, 20.1% 11.1%, 23.4% 10.2%, 26.9% 10%, 30.6% 10.6%, 34.7% 13%, 35.9% 8.4%, 38.1% 5.4%, 40.7% 3.1%, 43.6% 1.4%, 46.7% 0.3%);
+  --art-accent: #d62839; --gold: #c22a37; --gold-soft: #f9e0e2; }
