@@ -922,6 +922,7 @@ html[data-gloss="bn"] .gl-sep { display: none; }
 .glbar button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 @media print { .glbar { display: none; } }
 .lesson-gloss { margin: 6px 0 10px; }
+.p-gloss { margin: -2px 0 10px; font-size: .9rem; color: var(--ink-2); }
 
 /* ---------- course theme: Learn Bangla ---------- */
 :root { --paper: #f3f7f4; --surface-2: #e5efe8; --ink: #0f2a1d; --ink-2: #4a6355; --ink-3: #7a8f83; --line: #d2e1d7; --primary: #0b7a4b; --primary-print: #0b7a4b; --c-teal: #0b7a4b; --cover: #0b3d2a;

@@ -351,6 +351,7 @@ td .sub, th .sub { font-size: .85em; }
 [data-motif="fr"] .badge, [data-motif="zh"] .badge { box-shadow: inset 0 0 0 1.2mm var(--uc), inset 0 0 0 1.6mm rgba(255, 255, 255, .85); }
 [data-motif="bn"] .cover-art .ac { color: #f42a41; }
 [data-motif="fr"] .cover-art .ac { color: #ef4135; } [data-motif="fr"] .cover-art .ac2 { color: #8fb0ff; }
+.ln-gloss { font-size: 8.5pt; color: #4b635d; margin: -0.6mm 0 1.2mm; }
 
 /* course theme: Learn Bangla */
 :root { --primary: #0b7a4b; --ink: #0f2a1d; --ink-2: #4a6355; --ink-3: #7a8f83; --line: #d2e1d7; --tint: #e5efe8; --cover: #0b3d2a; --f-tg: "Hind Siliguri", "Noto Sans Bengali", "Nirmala UI", sans-serif; --f-en: "Figtree", "Hind Siliguri", "Noto Sans Bengali", "Nirmala UI", sans-serif, "Segoe UI", system-ui, sans-serif; --tg-k: .96; --tg-lh: 1.6;

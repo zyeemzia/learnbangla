@@ -1,7 +1,7 @@
 /* Offline cache for Learn Bangla. Copyright © ZyeemZia
    Pages and files open instantly from the cache and are refreshed in the background.
    VERSION is stamped by the build; a new version clears the old cache. */
-const VERSION = '32d73271e9';
+const VERSION = '8afb4d88e6';
 const CACHE = 'learnbangla-' + VERSION;
 const CORE = ['./', 'index.html', 'app.css', 'fonts.css', 'data.bundle.js', 'core.js', 'art.js', 'app.js', 'favicon.svg', 'book.html', 'book.css', 'book.js'];
 
